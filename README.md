@@ -14,6 +14,7 @@ Uma brincadeira com HTML, css e javascript com o jogo flappy bird
 6. O jogo vai abrir no seu navegador. Divirta-se!
 
 ![Imagem mostrando download do zip](./src/metal-bird-screen-shot.png)
+![Imagem mostrando o index.html](./src/index.html-image.png)
 
 ### Usando o git bash
 
