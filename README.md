@@ -2,7 +2,20 @@
 
 Uma brincadeira com HTML, css e javascript com o jogo flappy bird
 
-## Como usar
+## Como baixar
+
+### Baixando o zip
+
+1. Clique em **Clone or download** 
+2. Clique em **Download ZIP**
+3. Use o winrar ou outra ferramenta para desempacotar este arquivo que você baixou
+4. Vá na pasta onde está o projeto
+5. Abra o arquivo **index.html**
+6. O jogo vai abrir no seu navegador. Divirta-se!
+
+![Imagem mostrando download do zip](./src/metal-bird-screen-shot.png)
+
+### Usando o git bash
 
 1. Tenha git no seu computador, para instalar use o link abaixo:
     * https://git-scm.com/downloads
@@ -13,4 +26,4 @@ Uma brincadeira com HTML, css e javascript com o jogo flappy bird
 
 ## Como jogar
 
-Clique e segure [Espaço]() para o metal bird voar, solte para ele cair.
+Clique e segure **Espaço** para o metal bird voar, solte para ele cair.
