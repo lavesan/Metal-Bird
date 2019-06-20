@@ -8,7 +8,7 @@ Uma brincadeira com HTML, css e javascript com o jogo flappy bird
 
 1. Clique em **Clone or download** 
 2. Clique em **Download ZIP**
-3. Use o winrar ou outra ferramenta para desempacotar este arquivo que você baixou
+3. Use o winrar ou outra ferramenta para desempacotar ***(isso é importante!)*** este arquivo que você baixou
 4. Vá na pasta onde está o projeto
 5. Abra o arquivo **index.html**
 6. O jogo vai abrir no seu navegador. Divirta-se!
