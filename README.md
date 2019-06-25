@@ -11,7 +11,7 @@ Uma brincadeira com HTML, css e javascript com o jogo flappy bird
 ![Imagem mostrando download do zip](./src/metal-bird-screen-shot.png)
 3. Use o winrar ou outra ferramenta para desempacotar ***(isso é importante!)*** este arquivo que você baixou
 4. Vá na pasta onde está o projeto
-5. Abra o arquivo **index.html**
+5. Abra o arquivo **index.html**<br />
 ![Imagem mostrando o index.html](./src/index.html-image.png)
 6. O jogo vai abrir no seu navegador. Divirta-se!
 
