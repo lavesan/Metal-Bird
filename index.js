@@ -87,6 +87,7 @@ const rotateSkull = function(deg) {
     skull.style.transform = `rotate(${deg}deg)`;
 }
 
+/** @description Starts the game */
 const game = function() {
     scoreValue = 0;
     score.value = 0;
@@ -131,24 +132,27 @@ const game = function() {
     
     /** @description Create a new pipe */
     const createPipe = setInterval(() => {
-        const { up, down } = getPipeBodyHeight();
-    
-        const newPipeHTML = `
-            <div class="pipe-box">
-                <div class="up-pipe-box" style="height: calc(${up}% - 50px)">
-                    <div class="pipe-body"></div>
-                    <div class="pipe-head"></div>
-                </div>
-                <div class="down-pipe-box" style="height: calc(${down}% - 50px)">
-                    <div class="pipe-head"></div>
-                    <div class="pipe-body"></div>
-                </div>
-            </div>`;
-        pipesElement.insertAdjacentHTML('beforeend', newPipeHTML);
+        if (pipesPosition.length < 10) {
+            const { up, down } = getPipeBodyHeight();
         
-        pipesPosition.push({ up, down, elem: pipesElement.lastChild });
+            const newPipeHTML = `
+                <div class="pipe-box">
+                    <div class="up-pipe-box" style="height: calc(${up}% - 50px)">
+                        <div class="pipe-body"></div>
+                        <div class="pipe-head"></div>
+                    </div>
+                    <div class="down-pipe-box" style="height: calc(${down}% - 50px)">
+                        <div class="pipe-head"></div>
+                        <div class="pipe-body"></div>
+                    </div>
+                </div>`;
+            pipesElement.insertAdjacentHTML('beforeend', newPipeHTML);
+            
+            pipesPosition.push({ up, down, elem: pipesElement.lastChild });
+        }
     }, 1000);
     
+    // The width between the pipes
     let betweenPipe = {
         start: 26,
         end: 126
@@ -163,8 +167,12 @@ const game = function() {
         const onlyNumberSkull = Number(skull.style.bottom.replace(/\D/g, ''));
     
         if (nextPipeHeight.x >= betweenPipe.start && nextPipeHeight.x <= betweenPipe.end) {
+
+            // The area for the skull to fit between the up and down pipes
+            const areaToFit = 110 - skull.clientHeight;
             // Game over condition
-            if (onlyNumberSkull < elem.lastElementChild.clientHeight || onlyNumberSkull > elem.lastElementChild.clientHeight + 100) {
+            if (onlyNumberSkull < elem.lastElementChild.clientHeight || 
+                onlyNumberSkull > elem.lastElementChild.clientHeight + areaToFit) {
                 // Clear intervals
                 clearInterval(skullGoingDown);
                 clearInterval(skullGoingUp);
@@ -213,10 +221,12 @@ const audiosSrc = [
     './src/Slipknot - The Heretic Anthem (Audio).mp3',
     './src/Slipknot - The Blister Exists (Audio).mp3'
 ]
-setTimeout(() => {
-    audio.play();
 
-}, 1000);
+/** @description Plays audio has played */
+const playAudio = setInterval(() => {
+    audio.play()
+        .then(_ => clearInterval(playAudio))
+}, 100);
 
 audio.onended = function() {
     if(audiosSrc[0])

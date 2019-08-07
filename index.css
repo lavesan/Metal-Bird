@@ -44,7 +44,7 @@ body {
 
 #retry button {
     user-select: none;
-    background: none;
+    background-color: #fff;
     border: 2px solid #f2401d;
     color: #f2401d;
     padding: 10px;
@@ -52,6 +52,20 @@ body {
     cursor: pointer;
     font-weight: bolder;
     font-size: 3rem;
+    animation: retry-button 1s infinite both;
+}
+
+@keyframes retry-button {
+	from   { 
+        color: #fff; 
+        background-color: #f2401d; 
+        border-color: #fff;
+    }
+	to  { 
+        color: #f2401d; 
+        background-color: #fff; 
+        border-color: #f2401d;
+    }
 }
 
 #game-box {
@@ -121,10 +135,4 @@ body {
     width: 90%;
     border-bottom: none;
     border-top: none;
-}
-
-.up-pipe-box .pipe-body {
-}
-
-.down-pipe-box .pipe-body {
 }
