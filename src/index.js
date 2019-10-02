@@ -217,9 +217,9 @@ const retry = function() {
 const audio = document.getElementById('audio');
 
 const audiosSrc = [
-    './src/Slipknot - Spit It Out [OFFICIAL VIDEO].mp3',
-    './src/Slipknot - The Heretic Anthem (Audio).mp3',
-    './src/Slipknot - The Blister Exists (Audio).mp3'
+    './assets/Slipknot - Spit It Out [OFFICIAL VIDEO].mp3',
+    './assets/Slipknot - The Heretic Anthem (Audio).mp3',
+    './assets/Slipknot - The Blister Exists (Audio).mp3'
 ]
 
 /** @description Plays audio has played */
