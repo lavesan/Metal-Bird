@@ -1,6 +1,6 @@
 ## Flappy bird customizado
 
-Uma brincadeira com HTML, css e javascript com o jogo flappy bird
+O jogo do flappy bid em HTML, css e javascript
 
 ## Como jogar
 
