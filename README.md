@@ -12,11 +12,11 @@ Clique e segure **Espaço** para o metal bird voar, solte para ele cair.
 
 1. Clique em **Clone or download** 
 2. Clique em **Download ZIP**
-![Imagem mostrando download do zip](./src/metal-bird-screen-shot.png)
+![Imagem mostrando download do zip](./src/assets/metal-bird-screen-shot.png)
 3. Use o winrar ou outra ferramenta para desempacotar ***(isso é importante!)*** este arquivo que você baixou
 4. Vá na pasta onde está o projeto
 5. Abra a past `src` e execute o arquivo `index.html`<br />
-![Imagem mostrando o index.html](./src/index.html-image.png)
+![Imagem mostrando o index.html](./src/assets/index.html-image.png)
 6. O jogo vai abrir no seu navegador. Divirta-se!
 
 ### Você é um desenvolvedor? Então faça o seguinte:
