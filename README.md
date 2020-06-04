@@ -2,6 +2,11 @@
 
 O jogo do flappy bird em HTML, css e javascript
 
+<div style="display: flex; flex-flow: row nowrap;">
+   <img width="180" src="https://valderyportfolio.s3.amazonaws.com/projetos/metal-bird-mobile.jpeg" />
+   <img width="180" src="https://valderyportfolio.s3.amazonaws.com/projetos/metal-bird-web.png" />
+</div>
+
 ## Como jogar
 
 Clique e segure **Espaço** para o metal bird voar, solte para ele cair.
