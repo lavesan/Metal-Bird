@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <meta name="theme-color" content="#000" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="icon" href="./assets/bad-boy-skull-removebg-preview.png">
 
     <link rel="stylesheet" href="./index.css">
@@ -12,20 +14,26 @@
     <title>Flappy bird</title>
 </head>
 <body>
-    <p class="title-text">Metal bird</p>
-    <div id="game-box">
-        <img src="./assets/bad-boy-skull-removebg-preview.png" alt="Hardcore man" width="60px" id="character-img">
-        <input type="text" id="score" value="0" readonly />
-        <div id="all-pipes"></div>
-        <div id="retry"></div>
+    <div class="page-container">
+        <button id="go-top" title="Ir ao fim"><i class="fas fa-sort-up"></i></button>
+        <button id="go-down" title="Voltar ao início"><i class="fas fa-sort-down"></i></button>
+        <p class="title-text">Metal bird</p>
+        <div id="game-box">
+            <img src="./assets/bad-boy-skull-removebg-preview.png" alt="Hardcore man" width="60px" id="character-img">
+            <input type="text" id="score" value="0" readonly />
+            <div id="all-pipes"></div>
+            <div id="retry"></div>
+        </div>
+        <footer class="audio-container">
+            <audio controls autoplay id="audio">
+                <source src="./assets/Slipknot - The Devil In I [OFFICIAL VIDEO].mp3" type="audio/mpeg">
+                <source src="./assets/Slipknot - Spit It Out [OFFICIAL VIDEO].mp3" type="audio/mpeg">
+                <source src="./assets/Slipknot - The Heretic Anthem (Audio).mp3" type="audio/mpeg">
+                <source src="./assets/Slipknot - The Blister Exists (Audio).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </footer>
     </div>
-    <audio controls autoplay id="audio">
-        <source src="./assets/Slipknot - The Devil In I [OFFICIAL VIDEO].mp3" type="audio/mpeg">
-        <source src="./assets/Slipknot - Spit It Out [OFFICIAL VIDEO].mp3" type="audio/mpeg">
-        <source src="./assets/Slipknot - The Heretic Anthem (Audio).mp3" type="audio/mpeg">
-        <source src="./assets/Slipknot - The Blister Exists (Audio).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <script src="./index.js"></script>
 </body>
 </html>

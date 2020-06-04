@@ -1,7 +1,10 @@
 const pipesElement = document.getElementById('all-pipes');
-const body = document.querySelector('body');
-const skull = document.getElementById('character-img');
-const score = document.getElementById('score');
+const body         = document.querySelector('body');
+const skull        = document.getElementById('character-img');
+const score        = document.getElementById('score');
+const gameBox      = document.getElementById('game-box');
+const goUpButton   = document.getElementById('go-top');
+const goDownButton = document.getElementById('go-down');
 
 let scoreValue;
 if (!localStorage.getItem('highScore')) {
@@ -19,37 +22,61 @@ let skullGoingDown = setInterval(() => {
 /** @description Interval to make skull go up */
 let skullGoingUp;
 
+/**
+ * @description Makes the skull go up
+ */
+const goUp = () => {
+    if (skullGoingDown) {
+        clearInterval(skullGoingDown);
+        skullGoingDown = 0;
+    }
+
+    if (!skullGoingUp) {
+        skullGoingUp = setInterval(() => {
+            manageSkullPosition(false);
+        }, 1);
+    }
+}
+
+/**
+ * @description Makes the skull go down
+ */
+const goDown = () => {
+    if (skullGoingUp) {
+        clearInterval(skullGoingUp);
+        skullGoingUp = 0;
+    }
+
+    if (!skullGoingDown) {
+        skullGoingDown = setInterval(() => {
+            manageSkullPosition(true);
+        }, 1);
+    }
+}
+
 /** @description When space is clicked, the skull goes up */
 bodyKeyDown = body.onkeydown = function(e) {
     if (e.code.toLowerCase() === 'space') {
-        if (skullGoingDown) {
-            clearInterval(skullGoingDown);
-            skullGoingDown = 0;
-        }
-
-        if (!skullGoingUp) {
-            skullGoingUp = setInterval(() => {
-                manageSkullPosition(false);
-            }, 1);
-        }
+        goUp();
     }
 }
 
 /** @description When space is release, the skull goes down */
 bodyKeyUp = body.onkeyup = function(e) {
     if (e.code.toLowerCase() === 'space') {
-        if (skullGoingUp) {
-            clearInterval(skullGoingUp);
-            skullGoingUp = 0;
-        }
-
-        if (!skullGoingDown) {
-            skullGoingDown = setInterval(() => {
-                manageSkullPosition(true);
-            }, 1);
-        }
+        goDown();
     }
 }
+
+// Responsivity
+gameBox.addEventListener('touchstart', () => {
+    window.scrollTo(0, 40);
+    goUp();
+});
+
+gameBox.addEventListener('touchend', () => {
+    goDown();
+});
 
 /**
  * @description Manages skull position going down or up
@@ -165,14 +192,17 @@ const game = function() {
     
         // Remove pipe colision validation from array
         const onlyNumberSkull = Number(skull.style.bottom.replace(/\D/g, ''));
-    
+
+        // Check the position of the pipes
         if (nextPipeHeight.x >= betweenPipe.start && nextPipeHeight.x <= betweenPipe.end) {
 
             // The area for the skull to fit between the up and down pipes
             const areaToFit = 110 - skull.clientHeight;
             // Game over condition
-            if (onlyNumberSkull < elem.lastElementChild.clientHeight || 
-                onlyNumberSkull > elem.lastElementChild.clientHeight + areaToFit) {
+            if (
+                onlyNumberSkull < elem.lastElementChild.clientHeight || 
+                onlyNumberSkull > elem.lastElementChild.clientHeight + areaToFit
+            ) {
                 // Clear intervals
                 clearInterval(skullGoingDown);
                 clearInterval(skullGoingUp);
@@ -184,7 +214,7 @@ const game = function() {
             }
         }
 
-        
+
         if (nextPipeHeight.x <= betweenPipe.start) {
             betweenPipe = {
                 start: betweenPipe.start,
@@ -234,3 +264,14 @@ audio.onended = function() {
     audiosSrc.unshift()
     audio.play();
 };
+
+const scrollToEnd = () => {
+    window.scrollTo(0, body.scrollHeight);
+}
+
+const scrollToTop = () => {
+    window.scrollTo(0, 0);
+}
+
+goDownButton.onclick = scrollToEnd;
+goUpButton.onclick = scrollToTop;

@@ -2,9 +2,12 @@
   "name": "flappy-bird",
   "version": "1.0.0",
   "description": "A custom flappy bird game",
-  "main": "index.js",
+  "main": "./src/index.html",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "start:dev": "npm run lite",
+    "start:prod": "npm run lite -c prod-bs-config.json",
+    "lite": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -33,7 +36,8 @@
     "gulp-uglifycss": "1.0.9",
     "gulp-util": "3.0.8",
     "gulp-watch": "5.0.0",
-    "gulp-webserver": "0.9.1"
+    "gulp-webserver": "0.9.1",
+    "lite-server": "^2.5.4"
   },
   "homepage": "https://github.com/lavesan/Metal-Bird#readme"
 }
