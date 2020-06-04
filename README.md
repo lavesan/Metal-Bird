@@ -9,7 +9,11 @@ O jogo do flappy bird em HTML, css e javascript
 
 ## Como jogar
 
+### No computador
 Clique e segure **Espaço** para o metal bird voar, solte para ele cair.
+
+### No celular
+Clique e segure na área do jogo para o metal bird voar, solte para ele cair.
 
 ## Como baixar
 
