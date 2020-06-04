@@ -70,7 +70,6 @@ bodyKeyUp = body.onkeyup = function(e) {
 
 // Responsivity
 gameBox.addEventListener('touchstart', () => {
-    window.scrollTo(0, 40);
     goUp();
 });
 
